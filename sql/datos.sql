@@ -248,6 +248,16 @@ CREATE TABLE `CITA` (
   CONSTRAINT `FK_CITA_PACIENTE_ID` FOREIGN KEY (`PACIENTE_ID`) REFERENCES `PACIENTE` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `CITA`
+--
+
+INSERT INTO `CITA` (`ID`, `DURACION`, `ESTADO`, `FECHA`, `HORA`, `MEDICO_ID`, `PACIENTE_ID`) VALUES 
+('1', '10', 'Pendiente', '2018-06-05', '08:00:00', '2', '3'), 
+('2', '10', 'Pendiente', '2018-06-05', '09:00:00', '2', '4'), 
+('3', '15', 'Realizada', '2018-06-05', '10:10:00', '2', '2'), 
+('4', '20', 'Pendiente', '2018-06-05', '12:00:00', '2', '1'), 
+('5', '25', 'Anulada', '2018-06-05', '13:00:00', '2', '1');
 
 --
 -- Table structure for table `USUARIO_GEN`
