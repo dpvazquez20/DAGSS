@@ -19,6 +19,4 @@ public class PrescripcionDAO extends GenericoDAO<Prescripcion> {
         
         return q.getSingleResult();
     }
-    
-    // Completar aqui  
 }

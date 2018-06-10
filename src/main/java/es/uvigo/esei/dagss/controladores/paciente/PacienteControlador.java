@@ -135,4 +135,21 @@ public class PacienteControlador implements Serializable {
         }
         return destino;
     }
+    
+    public String buscarPaciente() {
+        String destino = null;
+        
+        if (numeroTarjetaSanitaria == null || numeroTarjetaSanitaria.length() == 0) {
+            destino = "index";
+        } else {
+            Paciente paciente = pacienteDAO.buscarPorTarjetaSanitaria(numeroTarjetaSanitaria);
+            if (paciente == null) {
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "No existe ningún paciente con los datos indicados", ""));
+            } else {
+                destino = "recetas";
+            }
+        }
+        
+        return destino;
+    }
 }
